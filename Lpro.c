@@ -5,6 +5,8 @@ void issue_book();
 void Addstudent();
 void Books();
 void search_student();
+void menu();
+
 
 struct student_info{
     char student_ID[11];
@@ -59,7 +61,7 @@ void menu()
           break;
     case 'b':
          search_student();
-        break;
+         break;
     case 'c':
         Books();
         break;
@@ -67,7 +69,6 @@ void menu()
        issue_book();
         break;
     case 'e':
-
         break;
     default:
         printf("\n\t\tWrong Entry.\n\t\tPlease Enter Right Character.\n");
@@ -97,21 +98,31 @@ void menu()
      menu();
 
  }
- void search_student(struct student_info x)
+ /*void search_student()
  {
      sinfo n;
      char ch[50];
      studentinfo=fopen("studentinfo.txt","r+");
 
-            while(!feof(studentinfo)){
-
+        while(!feof(studentinfo)){
         fscanf(studentinfo,"%s",ch);
-        printf("%s\n");
-            }
-            fclose(studentinfo);
+        printf("%s\n"); }
+    
+        fclose(studentinfo);
+ }*/
+ void search_student()
+{
+    sinfo n;
+    char ch[50];
+    studentinfo=fopen("studentinfo.txt","r+");
 
+    while(!feof(studentinfo)){
+        fscanf(studentinfo,"%s",ch);
+        printf("%s\\n", ch); 
+    }
+    fclose(studentinfo);
+}
 
- }
 void Books(){
 struct library
 {
